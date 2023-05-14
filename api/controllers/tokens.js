@@ -3,7 +3,7 @@ const TokenGenerator = require("../models/token_generator")
 
 const SessionsController = {
 
-  Create: (req, res) => {
+  Create: (req, res) => { // syntax for an object method
     const email = req.body.email;
     const password = req.body.password;
 
