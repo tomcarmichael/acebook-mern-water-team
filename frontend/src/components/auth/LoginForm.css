@@ -36,3 +36,8 @@
   background-color: #1e5cbf;
   color: #fff;
 }
+
+.login-form #error-message {
+  color: red;
+  text-align: center;
+}
