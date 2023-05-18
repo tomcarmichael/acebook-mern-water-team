@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const { validateEmail } = require("../helpers/validation");
 const { validatePassword } = require("../helpers/validation");
+const { validateUsername } = require("../helpers/validation");
 
 const UsersController = {
   Create: (req, res) => { 
@@ -10,12 +11,19 @@ const UsersController = {
       res.status(400).json({
         message: 'Invalid email address!'
       })
+
+    // if username is ok
+    } else if (!validateUsername(user.username)) {
+      res.status(400).json({
+        message: 'Invalid username!'
+      })
        
       // if password is ok
     } else if (!validatePassword(user.password)) {
       res.status(400).json({
         message: 'Invalid password!'
       })
+
     } else {
       user.save((err) => {
         if (err) {
