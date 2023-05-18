@@ -18,7 +18,7 @@
   font-family: 'Raleway';
   width: 100%;
   font-size: 1.1rem;
-  margin: 10px 0 20px;
+  margin: 10px 0 10px;
   padding: 5px 10px;
   border: 1px solid #aaa;
   border-radius: 5px; 
@@ -40,4 +40,8 @@
 .login-form #error-message {
   color: red;
   text-align: center;
+}
+
+.login-form #li {
+  color: #1e5cbf;
 }
