@@ -5,6 +5,7 @@ const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const[avatar, setAvatar] = useState(""); // [null, function
   const [errors, setErrors] = useState([]); //  'Invalid email address!'
   window.localStorage.setItem("app-route", "signup")
 
@@ -16,7 +17,7 @@ const SignUpForm = ({ navigate }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: email, username: username, password: password })
+      body: JSON.stringify({ email: email, username: username, password: password, avatar: avatar})
     })
       .then(response => {
         if(response.status === 201) {
@@ -45,6 +46,10 @@ const SignUpForm = ({ navigate }) => {
     setPassword(event.target.value)
   }
 
+  const handleAvatarChange = (event) => {
+    setAvatar(event.target.value)
+  }
+
   const login = () => {
     navigate('/login')
   }
@@ -69,6 +74,10 @@ const SignUpForm = ({ navigate }) => {
               <li id="li">Must be between 8 to 20 characters.</li> 
               <li id="li">Requires one uppercase, one lowercase, and one number.</li>
             </small>
+          <br></br>
+
+          <input placeholder="Avatar (optional)" id="avatar" type='avatar' value={ avatar } onChange={handleAvatarChange} />
+
           <br></br>
 
           <div id="error-message">{errors}</div>
