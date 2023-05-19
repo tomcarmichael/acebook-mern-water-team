@@ -5,7 +5,7 @@ const User = require('../../models/user');
 
 describe("/tokens", () => {
   beforeAll( () => {
-    const user = new User({ email: "test@test.com", password: "12345678", username: "blabla" })
+    const user = new User({ email: "test@test.com", password: "Password1234", username: "blabla" })
     user.save()
   });
 
@@ -16,7 +16,7 @@ describe("/tokens", () => {
   test("a token is returned when creds are valid", async () => {
     let response = await request(app)
       .post("/tokens")
-      .send({password: "12345678", username: "blabla"})
+      .send({password: "Password1234", username: "blabla"})
     expect(response.status).toEqual(201)
     expect(response.body.token).not.toEqual(undefined)
     expect(response.body.message).toEqual("OK")
