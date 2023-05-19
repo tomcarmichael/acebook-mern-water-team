@@ -31,6 +31,7 @@ const Feed = ({ navigate }) => {
           data.posts.forEach((post) => {
             post.author = post.authorUserID.username
             post.avatar = post.authorUserID.avatar
+            // console.log(post.authorUserID.avatar)
             delete post.authorUserID
           })
           setPosts(orderByDate(data.posts));
