@@ -5,7 +5,7 @@ describe('AddPost', () => {
   it('creates a new post', () => {
     window.localStorage.setItem("token", "fakeToken")
     
-    cy.mount(<AddPost />);
+    cy.mount(<AddPost onPostAdded={() => {}}/>);
 
     cy.intercept('POST', '/posts', {
       statusCode: 201,
@@ -16,6 +16,7 @@ describe('AddPost', () => {
     }).as('newPostRequest');
 
     cy.get('#message').type('text');
+    cy.get('#message').should('have.value', 'text');
     cy.get('#submit').click();
 
     cy.wait('@newPostRequest').then((interception) => {

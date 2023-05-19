@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './AddPost.css';
 
-const AddPost = () => { // was passing in navigate but that is not passed into this component in Feed
+const AddPost = ({ onPostAdded }) => { 
+  console.log("component rendered")
   const [message, setMessage] = useState('');
   const [token, setToken] = useState(window.localStorage.getItem("token"));
 
@@ -10,7 +11,6 @@ const AddPost = () => { // was passing in navigate but that is not passed into t
 
       if (token) {
 
-        console.log(`${message}`) // VISIBILITY
         const response = await fetch('/posts', {
           method: 'POST',
           headers: {
@@ -24,15 +24,13 @@ const AddPost = () => { // was passing in navigate but that is not passed into t
         })
         if (response.status !== 201) {
           console.log("oops")
-          // navigate('/login')
         } else {
-          console.log("yay!")
+          console.log("Whoop! whoop!")
           let data = await response.json()
-          console.log(data) // VISIBILITY
-          window.location.reload()
+          setMessage('')
           window.localStorage.setItem("token", data.token)
           setToken(window.localStorage.getItem("token"));
-          // navigate('/posts'); // navigate is not present in this component
+          onPostAdded();
         }
       }
   }
@@ -47,8 +45,6 @@ const AddPost = () => { // was passing in navigate but that is not passed into t
           <input className="input-field" placeholder='Message' id="message" type='text' value={message} onChange={handleMessageChange} />
           <input className="input-button" role='submit-button' id='submit' type="submit" value="Add New Post" />
         </form>  
-
-    
       </>
     )
   }

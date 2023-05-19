@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import './AddComment.css';
 
-// const Post = require('../../models/post');
-
-const AddComment = ({ post }) => {
+const AddComment = ({ post, onPostAdded }) => {
   const [comment, setComment] = useState('');
   const [token, setToken] = useState(window.localStorage.getItem("token"));
 
@@ -29,18 +27,14 @@ const AddComment = ({ post }) => {
         console.log(response)
         if (response.status !== 200) {
           console.log("oops")
-          // navigate('/login')
         } else {
           console.log("yay!")
-          console.log(`res = ${response}`)
-          console.log(response)
           let data = await response.json()
           console.log(`token = ${data.token}`)
-          console.log(data) // VISIBILITY
           window.localStorage.setItem("token", data.token)
-          
           setToken(window.localStorage.getItem("token"));
-          setComment("")
+          setComment("");
+          onPostAdded();
         }
       }
   }
@@ -52,7 +46,6 @@ const AddComment = ({ post }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        {/* <label htmlFor="comment">Add a comment</label> */}
         <input data-cy="comment" className="input-field" 
           placeholder='Comment' id="comment" type='text' 
           value={comment} onChange={handleCommentChange}
