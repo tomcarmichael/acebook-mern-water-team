@@ -6,6 +6,7 @@ const SignUpForm = ({ navigate }) => {
   const [password, setPassword] = useState('');
   const [avatar, setAvatar] = useState(null);
   const [errors, setErrors] = useState([]);
+  window.localStorage.setItem("app-route", "signup")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -56,6 +57,7 @@ const SignUpForm = ({ navigate }) => {
   const handleAvatarChange = (event) => {
     //before was a string, now is a fileq
     setAvatar(event.target.files[0]);
+    console.log(event.target.files[0]);
   };
 
   const login = () => {
@@ -64,6 +66,9 @@ const SignUpForm = ({ navigate }) => {
 
   return (
     <div className='login-form'>
+      <div className='title-container'>
+        <h1 className='login-title'>Farcebook Sign Up</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <label for="email">Enter an email address: </label>
           <input placeholder="Email" id="email" type='text' value={ email } onChange={handleEmailChange} /> <br />
