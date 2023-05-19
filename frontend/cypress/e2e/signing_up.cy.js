@@ -4,7 +4,7 @@ describe("Signing up", () => {
     cy.visit("/signup");
     cy.get("#email").type("someoneelse@example.com");
     cy.get("#password").type("Password1234");
-    cy.get("#username").type("someotherusername");
+    cy.get("#username").type("anotheruser");
     cy.get("#submit").click();
 
     cy.url().should("include", "/login");

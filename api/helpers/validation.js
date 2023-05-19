@@ -7,3 +7,6 @@ exports.validatePassword = (password) => {
   return String(password)
   .match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$/)
 }
+exports.validateUsername = (username) => {
+  return String(username).match(/^.{5,15}$/)
+}

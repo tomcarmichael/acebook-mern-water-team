@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const { validateEmail, validatePassword } = require("../helpers/validation");
+const { validateEmail, validatePassword, validateUsername } = require("../helpers/validation");
 const multer = require("multer");
 
 // Configure multer storage
@@ -32,13 +32,21 @@ const UsersController = {
         res.status(500).json({
           message: "Error processing request",
         });
+
       } else {
         const user = new User(req.body);
         if (!validateEmail(user.email)) {
           res.status(400).json({
             message: "Invalid email address!",
-          });
-        } else if (!validatePassword(user.password)) {
+          // if username is ok
+        })
+
+      } else if (!validateUsername(user.username)) {
+      res.status(400).json({
+        message: 'Invalid username!'
+      });
+      
+      } else if (!validatePassword(user.password)) {
           res.status(400).json({
             message: "Invalid password!",
           });

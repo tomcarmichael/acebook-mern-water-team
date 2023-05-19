@@ -19,10 +19,12 @@ const LogInForm = ({ navigate }) => {
     })
 
     if (response.status !== 201) {
-      console.log("yay")
+      console.log("oops")
       navigate('/login')
+      const errorMessage = document.getElementById('error-message')
+      errorMessage.textContent = "Incorrect username or password"
     } else {
-      console.log("oop")
+      console.log("yay")
       let data = await response.json()
       window.localStorage.setItem("token", data.token)
       window.localStorage.setItem("username", username)
@@ -49,6 +51,7 @@ const LogInForm = ({ navigate }) => {
         <input placeholder="Username" id="username" type='text' value={ username } onChange={handleUsernameChange} /> <br />
         <label htmlFor="password">Password: </label>
         <input placeholder='Password' id="password" type='password' value={password} onChange={handlePasswordChange} /> <br />
+        <p id='error-message'></p>
         <input role='submit-button' id='submit' type="submit" value="Submit" />
       </form>
     

@@ -70,21 +70,35 @@ const SignUpForm = ({ navigate }) => {
         <h1 className='login-title'>Farcebook Sign Up</h1>
       </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='email'>Email:</label>
-        <input placeholder='Email' id='email' type='text' value={email} onChange={handleEmailChange} /> <br />
-        <label htmlFor='username'>Username:</label>
-        <input placeholder='Username' id='username' type='text' value={username} onChange={handleUsernameChange} /> <br />
-        <label htmlFor='password'>Password:</label>
-        <input placeholder='Password' id='password' type='password' value={password} onChange={handlePasswordChange} /> <br />
-        <label htmlFor='avatar'>Avatar:</label>
-        <input id='avatar' type='file' onChange={handleAvatarChange} /> <br />
+        <label htmlFor="email">Enter an email address: </label>
+          <input placeholder="Email" id="email" type='text' value={ email } onChange={handleEmailChange} /> <br />
+        <br></br>
 
-        <input id='submit' type='submit' value='Submit' />
+        <label htmlFor="username">Enter username: </label>
+          <input placeholder="Username" id="username" type='text' value={ username } onChange={handleUsernameChange} />
+            <small>
+              <li id="li">Must be between 5 to 15 characters.</li>
+            </small>
+        <br></br>
+
+        <label htmlFor="password">Enter a password: </label> <br />
+          <input placeholder="Password" id="password" type="password" value={ password } onChange={handlePasswordChange} />
+            <small>
+              <li id="li">Must be between 8 to 20 characters.</li> 
+              <li id="li">Requires one uppercase, one lowercase, and one number.</li>
+            </small>
+          <br></br>
+
+          <label htmlFor='avatar'>Avatar (optional):</label>
+          <input id='avatar' type='file' onChange={handleAvatarChange} />
+
+          <br></br>
+
+          <div id="error-message">{errors}</div>
+        <input id='submit' type="submit" value="Submit" />
       </form>
-
-      <div>{errors}</div>
     </div>
   );
-};
+}
 
 export default SignUpForm;
