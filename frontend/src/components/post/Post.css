@@ -48,3 +48,15 @@
   justify-content: space-between;
 }
 
+.main-body {
+  margin: 0;
+}
+
+
+@media (max-width: 950px) {
+  .main-body {
+    margin: 0 15px;
+  }
+}
+
+

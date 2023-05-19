@@ -98,3 +98,9 @@ nav:hover #logo {
   }
 }
 
+@media (max-width: 800px) {
+  nav h1 {
+    display: none;
+  }
+}
+

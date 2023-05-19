@@ -14,8 +14,8 @@ const Post = ({ post, onPostAdded }) => {
   const [showComments, setShowComments] = useState(false);  
 
   return (
- 
-    <div className="postbox postflex">
+    <div className="main-body">
+      <div className="postbox postflex">
       
       <Avatar
         className="post-avatar"
@@ -58,6 +58,10 @@ const Post = ({ post, onPostAdded }) => {
         </div>  
       </article> 
     </div>
+
+    </div>
+ 
+    
   );
 };
 
