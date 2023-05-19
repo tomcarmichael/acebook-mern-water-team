@@ -106,7 +106,10 @@ describe("/posts", () => {
       let response = await request(app)
         .post("/posts")
         .send({ message: "hello again world" });
-      expect(response.body.token).toEqual(undefined);
+        expect(response.status).toEqual(401);
+        expect(response.body.message).toEqual("auth error");
+        expect(response.body.token).toEqual(undefined);
+
     });
   })
 
