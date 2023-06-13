@@ -1,47 +1,12 @@
-# Acebook test
+# Makers Academy Acebook test (AKA Farcebook)
 
-In this project, you are tasked with working on an existing application. A significant part of the challenge will be to familiarise yourself with the codebase you've inherited, as you work to **improve and extend** it.
+## The Brief
 
-## Videos
+The second of our team Engineering Projects as part of the Makers Academy software development bootcamp, over two weeks our team of 5 was tasked with understanding a [pre existing codebase](https://github.com/makersacademy/acebook-mern-template), using the MERN stack. MongoDB, React, Express and Cypress were all brand new technologies to us at the start of this project, and much of the time and energy over the two weeks went into learning these, and how they had been put into practice in the existing codebase.
 
-These videos complement the docs below.
+From the Makers Academy brief:
 
-* [An overview of the app](https://youtu.be/meTABGgrO2c)
-* [The backend (api)](https://youtu.be/mFczOzWW3vo)
-* [Postman](https://youtu.be/VO_kinuJngA)
-
-## Existing Features
-
-It's already possible for a user to:
-- Sign up
-- Sign in
-- Sign out
-- View a list of posts
-
-## Technologies
-
-Here's an overview of the technologies used to build this template application. You don't need to do a deep dive on each one right now. Instead, try to get a feeling for the big picture and then dive into the details when a specific task pushes you in that direction.
-
-### **M** is for MongoDB
-[MongoDB](https://www.mongodb.com/) is a _NoSQL_ database program that stores data in collections of documents (in a format similar to JSON), rather than in tables. The application interacts with MongoDB using a tool called Mongoose.
-
-### **E** is for Express
-[Express](https://expressjs.com/) is the Javascript equivalent of Sinatra. The structure of this application will feel quite different to what you're used to but the principles are the same.
-
-### **R** is for React
-[React](https://reactjs.org/) is a hugely popular tool that is used to build engaging front ends. The basic principle is that the front end is split up into _components_, each of which _could_ include some logic, template structure (HTML) and styling (CSS).
-
-### **N** is for Node
-Java script was originally designed to run exclusively in browsers, such as Chrome. [Node](https://nodejs.org/en/) is a tool that allows you to run Javascript outside the browser and its invention made it possible to build full stack Javascript apps.
-
-We also used...
-
-- [Jest](https://jestjs.io/) for unit testing on the back end
-- [Cypress](https://www.cypress.io/) for end-to-end testing and component testing, on the front end
-- [Mongoose](https://mongoosejs.com) to model objects in MongoDB.
-- [Handlebars](https://handlebarsjs.com/) for the `home` template.
-- [ESLint](https://eslint.org) for linting.
-- [Nodemon](https://nodemon.io/) to reload the server automatically.
+>In this project, you are tasked with working on an existing application. A significant part of the challenge will be to familiarise yourself with the codebase you've inherited, as you work to **improve and extend** it.
 
 ## Architecture
 
@@ -123,7 +88,7 @@ The signature is created using a 'secret', which must be kept private (i.e. not 
 Here, we've used an environment variable called `JWT_SECRET`, which you'll see used in the commands to start the application and run the tests (below). You can change the value of that environment variable to anything you like.
 ## Card wall
 
-REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
+Our [team trello board shows](https://trello.com/b/SwWHBRbO/farcebook) the tickets we worked through, and what was still in our backlog at the end of the final sprint.
 
 ## Quickstart
 
