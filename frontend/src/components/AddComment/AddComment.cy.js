@@ -15,7 +15,7 @@ describe("AddComment", () => {
     }).as('newCommentRequest'); 
 
     cy.get('[data-cy="comment"]').type('text');
-    cy.get('[data-cy="submit"]').click();
+    cy.get('[data-cy="submit-comment"]').click();
 
     cy.wait('@newCommentRequest').then((interception) => {
       expect(interception.response.body.comment).to.eq('The comment under Hello FarceBook');

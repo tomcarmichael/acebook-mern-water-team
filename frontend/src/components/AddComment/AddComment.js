@@ -50,7 +50,7 @@ const AddComment = ({ post, onPostAdded }) => {
           placeholder='Comment' id="comment" type='text' 
           value={comment} onChange={handleCommentChange}
         />
-        <input data-cy="submit" className="input-button" 
+        <input data-cy="submit-comment" className="input-button" 
           role='submit-button' id='submit-comment' 
           type="submit" value="Add comment"
         />

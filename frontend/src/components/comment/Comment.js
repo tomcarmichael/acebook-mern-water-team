@@ -5,9 +5,9 @@ const Comment = ({comment, index}) => {
   return (
     <div className='commentbox commentflex'>
       <article data-cy="comment" key={index}>
-        <p className="comment-text">{comment.comment}</p>
+        <p className="comment-text" data-cy="comment-text">{comment.comment}</p>
         {/* <p>Posted at {post.createdAt.slice(11, 16)} on {post.createdAt.slice(0, 10)} by {post.author}</p> */}
-        <p className="comment-time-text"> by {comment.author}</p>
+        <p className="comment-time-text" data-cy="comment-author"> by {comment.author}</p>
       </article>
     </div>
     

@@ -39,12 +39,12 @@ const Post = ({ post, onPostAdded }) => {
         
         
         <div className="break-line"></div>
-        
         <Button
           margin={showComments ? "15px" : "0"}
           color={showComments ? "#f99e92" : "#a8eb71"}
           text={showComments ? "Hide Comments" : "Show Comments"}
           onClick={() => setShowComments(!showComments)}
+          id="show-comments-button"
         />
         {showComments && (
           <>
