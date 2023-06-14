@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const { connect, disconnect } = require("./cypress/support/db");
 
 module.exports = defineConfig({
   component: {
@@ -10,7 +11,19 @@ module.exports = defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on("task", {
+        async clearDB() {
+          const db = await connect();
+          const users = db.collection("users");
+
+          console.log("clear users");
+          await users.deleteMany({});
+          await users.dropIndexes();
+
+          await disconnect();
+
+          return null;
+        }});
     },
     baseUrl: 'http://localhost:3000'
   },

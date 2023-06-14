@@ -17,6 +17,10 @@ Cypress.Commands.add('signup', (email, username, password) => {
   cy.get("#password").type(password);
   cy.get("#submit").click();
 })
+
+Cypress.Commands.add('testCleanup', () => {
+  cy.task('clearDB')
+})
 //
 //
 // -- This is a child command --

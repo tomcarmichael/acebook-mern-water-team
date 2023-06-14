@@ -1,6 +1,7 @@
 describe("Signing in", () => {
 
   before(() => {
+    cy.testCleanup();
     cy.signup("someone@example.com", "testuser", "Password1234")
   })
 

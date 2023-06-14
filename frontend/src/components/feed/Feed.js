@@ -12,7 +12,6 @@ const Feed = ({ navigate }) => {
     setPostCount(prevCount => prevCount + 1); 
   };
 
-
   function orderByDate (posts) {
     return posts.sort((a,b) => new Date(a.createdAt) - new Date(b.createdAt)).reverse()
   }
@@ -29,13 +28,20 @@ const Feed = ({ navigate }) => {
           window.localStorage.setItem("token", data.token)
           setToken(window.localStorage.getItem("token"))
           data.posts.forEach((post) => {
-            post.author = post.authorUserID.username
-            post.avatar = post.authorUserID.avatar
-            delete post.authorUserID
+            if (post.authorUserID) {
+              post.author = post.authorUserID.username
+              post.avatar = post.authorUserID.avatar
+              delete post.authorUserID
+            } else {
+              console.log("Error: no author for post found")
+              post.author = "Unknown"
+              delete post.authorUserID
+            }
           })
           setPosts(orderByDate(data.posts));
         })
     }
+    else { console.log("authorisation failure") }
   }, [postCount]);
   
   if(token) {

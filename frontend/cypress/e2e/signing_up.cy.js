@@ -1,4 +1,7 @@
 describe("Signing up", () => {
+  before(() => {
+    cy.testCleanup();
+  })
   // this test passes when the users collection is empty - how do we make sure it's empty?
   it("with valid credentials, redirects to '/login'", () => {
     cy.visit("/signup");
