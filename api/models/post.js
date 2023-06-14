@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-//const { ObjectId } = require ("mongoose")
 
 const PostSchema = new mongoose.Schema({
   message: String, 
