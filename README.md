@@ -26,11 +26,11 @@ Here, we've used an environment variable called `JWT_SECRET`, which you'll see u
 ## Card wall
 
 Our team trello board shows the tickets we worked through, and what was still in our backlog at the end of the final sprint.
-![Team trello board](./ticket/trello-board-main.png)
+![Team trello board](./tickets/trello-board-main.png)
 
-![Team trello board 2](./ticket/trello-in-prod-2.png)
+![Team trello board 2](./tickets/trello-in-prod-2.png)
 
-![Team trello board 3](./ticket/trello-in-prod-3.png)
+![Team trello board 3](./tickets/trello-in-prod-3.png)
 
 
 ## Quickstart
@@ -50,24 +50,21 @@ Our team trello board shows the tickets we worked through, and what was still in
 
 ### Set up your project
 
-1. Fork this repository
-2. Rename your fork to `acebook-<team name>`
-3. Clone your fork to your local machine
-4. Install Node.js dependencies for both FE and BE (API)
+1. `git clone https://github.com/tomcarmichael/acebook-mern-water-team.git`
+2. 
    ```
    ; cd api
    ; npm install
    ; cd ../frontend
    ; npm install
    ```
-5. Install an ESLint plugin for your editor. For example: [`linter-eslint`](https://github.com/AtomLinter/linter-eslint) for Atom.
-6. Install MongoDB
+3. Install MongoDB
    ```
    brew tap mongodb/brew
    brew install mongodb-community@5.0
    ```
    *Note:* If you see a message that says `If you need to have mongodb-community@5.0 first in your PATH, run:`, follow the instruction. Restart your terminal after this.
-7. Start MongoDB
+4. Start MongoDB
    ```
    brew services start mongodb-community@5.0
    ```
@@ -91,14 +88,13 @@ Our team trello board shows the tickets we worked through, and what was still in
   ; npm start
   ```
 
-You should now be able to open your browser and go to `http://localhost:3000/signup` to create a new user.
+You should now be able to open your browser and go to `http://localhost:3000/signup` to create a new user, optionally uploading an avatar image.
 
 Then, after signing up, you should be able to log in by going to `http://localhost:3000/login`.
 
-After logging in, you won't see much but you can create posts using PostMan and they should then show up in the browser if you refresh the page.
+After logging in, you'll be able to create posts, like and comment.
 
 ### Testing
-
 
 #### The Backend (API)
 
@@ -142,13 +138,3 @@ After logging in, you won't see much but you can create posts using PostMan and 
   ; cd frontend
   ; JWT_SECRET=SUPER_SECRET npm run test
   ```
-
-## MongoDB Connection Errors?
-
-Some people occasionally experience MongoDB connection errors when running the tests or trying to use the application. Here are some tips which might help resolve such issues.
-
-- Check that MongoDB is installed using `mongo --version`
-- Check that it's running using `brew services list`
-
-If you have issues that are not resolved by these tips, please reach out to a coach and, once the issue is resolved, we can add a new tip!
->
