@@ -28,9 +28,9 @@ Here, we've used an environment variable called `JWT_SECRET`, which you'll see u
 Our team trello board shows the tickets we worked through, and what was still in our backlog at the end of the final sprint.
 ![Team trello board](./tickets/trello-board-main.png)
 
-![Team trello board 2](./tickets/trello-in-prod-2.png)
-
-![Team trello board 3](./tickets/trello-in-prod-3.png)
+|Team trello board 2|Team trello board 3|
+|:-:|:-:|
+|![Team trello board 2](./tickets/trello-in-prod-2.png)|![Team trello board 3](./tickets/trello-in-prod-3.png)|
 
 
 ## Quickstart
