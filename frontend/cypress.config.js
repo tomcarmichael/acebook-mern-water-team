@@ -20,6 +20,13 @@ module.exports = defineConfig({
           await users.deleteMany({});
           await users.dropIndexes();
 
+          const posts = db.collection("posts");
+
+          console.log("clear posts");
+          await posts.deleteMany({});
+          await posts.dropIndexes();
+
+
           await disconnect();
 
           return null;
