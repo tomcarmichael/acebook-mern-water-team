@@ -70,6 +70,13 @@ Our team trello board shows the tickets we worked through, and what was still in
    ```
    brew services start mongodb-community@5.0
    ```
+5. Create the MongoDB test database and its collections (the main 'acebook' DB will be created automatically when the application is used):
+   ```
+   mongosh
+   use acebook_test
+   db.createCollection("users")
+   db.createCollection("posts")
+   ```
 
 ### Start
 
@@ -145,11 +152,9 @@ After logging in, you'll be able to create posts, like and comment.
   ; JWT_SECRET=SUPER_SECRET npm run test:unit
   ```
 
-    To run only the Cypress end to end tests
+  To run only the Cypress end to end tests
 
   ```
   ; cd frontend
   ; JWT_SECRET=SUPER_SECRET npm run test:feature
   ```
-
-
