@@ -120,7 +120,7 @@ After logging in, you'll be able to create posts, like and comment.
 
 **Note the use of an environment variable for the JWT secret**
 
-  Start the server in test mode **as per above**
+  Start the backend server in test mode **as per above**
 
   Set the environment variable that allows Cypress to conect to your MongoDB instance running locally by copying the address of the server on which MongoDB is running e.g. 'mongodb://localhost:27017', and running the command `export MONGO_URI=[your_mongoDB_server_address]` (without the square brackets)
 
