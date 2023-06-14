@@ -118,11 +118,7 @@ After logging in, you'll be able to create posts, like and comment.
 
 **Note the use of an environment variable for the JWT secret**
 
-  Start the server in test mode (so that it connects to the test DB)
-
-  ```
-  ; cd api
-  ; JWT_SECRET=SUPER_SECRET npm run start:test
+  Start the server in test mode **as per above**
   ```
 
   Then start the front end in a new terminal session
@@ -132,9 +128,25 @@ After logging in, you'll be able to create posts, like and comment.
   ; JWT_SECRET=SUPER_SECRET npm start
   ```
 
-  Then run the tests in a new terminal session
+  Then, to run all Cypress tests in a new terminal session
 
   ```
   ; cd frontend
   ; JWT_SECRET=SUPER_SECRET npm run test
   ```
+
+  To run only the Cypress component tests
+
+  ```
+  ; cd frontend
+  ; JWT_SECRET=SUPER_SECRET npm run test:unit
+  ```
+
+    To run only the Cypress end to end tests
+
+  ```
+  ; cd frontend
+  ; JWT_SECRET=SUPER_SECRET npm run test:feature
+  ```
+
+
