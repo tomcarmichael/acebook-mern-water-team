@@ -10,6 +10,10 @@ describe("User model", () => {
     });
   });
 
+  afterAll( async () => {
+    await User.deleteMany({});
+  })
+
   it("has an email address", () => {
     const user = new User({
       email: "someone@example.com",
