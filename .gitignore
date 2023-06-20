@@ -65,3 +65,5 @@ typings/
 # cypress.io
 cypress/screenshots
 cypress/videos
+
+.DS_Store

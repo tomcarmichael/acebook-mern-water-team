@@ -3,12 +3,19 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const JWT = require("jsonwebtoken");
+const cors = require("cors")
 
 const postsRouter = require("./routes/posts");
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
 
 const app = express();
+
+app.use(cors(
+  {
+    origin: ['https://farcebook-frontend.onrender.com']
+  }
+))
 
 // setup for receiving JSON
 app.use(express.json())
