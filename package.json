@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
+  "proxy": "https://farcebook.onrender.com",
   "dependencies": {
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.1",
