@@ -3,7 +3,7 @@ const router = express.Router();
 
 const PostsController = require("../controllers/posts");
 
-router.get("/*", PostsController.Index);
+router.get("/", PostsController.Index);
 router.post("/", PostsController.Create);
 router.patch("/likes", PostsController.AddLikes);
 router.patch("/:id", PostsController.Update);    //AddComment: update post with new comment
