@@ -1,10 +1,10 @@
 const { MongoClient } = require("mongodb");
 
-// in my case the MONGO_URI is 'mongodb://localhost:27017';
+// in my case the MONGODB_URL is 'mongodb://localhost:27017';
 
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGODB_URL;
 if (!uri) {
-  throw new Error("Missing MONGO_URI environment variable");
+  throw new Error("Missing MONGODB_URL environment variable");
 }
 
 const client = new MongoClient(uri);
