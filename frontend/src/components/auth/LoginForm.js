@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import SignUpForm from '../user/SignUpForm'
 import "./LoginForm.css";
 
-let tokensURI = '/tokens';
-tokensURI = process.env.BACKEND_API_URI ? process.env.BACKEND_API_URI + tokensURI : tokensURI;
+const backendAPIURI = process.env.BACKEND_API_URI;
 
 const LogInForm = ({ navigate }) => {
   const [username, setUsername] = useState("");
@@ -13,7 +12,7 @@ const LogInForm = ({ navigate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch(tokensURI, {
+    let response = await fetch(`${backendAPIURI || ''}/`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

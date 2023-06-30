@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-let tokensURI = '/tokens';
-tokensURI = process.env.BACKEND_API_URI ? process.env.BACKEND_API_URI + tokensURI : tokensURI;
+const backendAPIURI = process.env.BACKEND_API_URI;
 
 const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState('');
@@ -24,7 +23,7 @@ const SignUpForm = ({ navigate }) => {
       formData.append('avatar', avatar);
     }
 
-    fetch('https://farcebook.onrender.com/tokens', {
+    fetch(`${backendAPIURI || ''}/users`, {
       method: 'POST',
       body: formData,
     })
