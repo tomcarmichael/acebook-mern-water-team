@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+let tokensURI = '/tokens';
+tokensURI = process.env.BACKEND_API_URI ? process.env.BACKEND_API_URI + tokensURI : tokensURI;
+
 const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -21,7 +24,7 @@ const SignUpForm = ({ navigate }) => {
       formData.append('avatar', avatar);
     }
 
-    fetch('/users', {
+    fetch(tokensURI, {
       method: 'POST',
       body: formData,
     })
