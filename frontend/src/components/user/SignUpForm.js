@@ -24,7 +24,7 @@ const SignUpForm = ({ navigate }) => {
       formData.append('avatar', avatar);
     }
 
-    fetch(tokensURI, {
+    fetch('https://farcebook.onrender.com/tokens', {
       method: 'POST',
       body: formData,
     })
