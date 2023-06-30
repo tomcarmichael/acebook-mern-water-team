@@ -18,7 +18,7 @@ const Feed = ({ navigate }) => {
 
   useEffect(() => {
     if (token) {
-      fetch("/posts", {
+      fetch("https://farcebook.onrender.com/posts", {
         headers: {
           'Authorization': `Bearer ${token}`
         }

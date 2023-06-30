@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const backendAPIURI = process.env.BACKEND_API_URI;
+// const backendAPIURI = process.env.BACKEND_API_URI;
 
 const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState('');
@@ -23,7 +23,7 @@ const SignUpForm = ({ navigate }) => {
       formData.append('avatar', avatar);
     }
 
-    fetch(`${backendAPIURI || ''}/users`, {
+    fetch('https://farcebook.onrender.com/users', {
       method: 'POST',
       body: formData,
     })
