@@ -10,7 +10,6 @@ const LogInForm = ({ navigate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // let response = await fetch('https://farcebook.onrender.com/tokens', {
     let response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/tokens`, {
       method: 'post',
       headers: {

@@ -23,7 +23,7 @@ const SignUpForm = ({ navigate }) => {
       formData.append('avatar', avatar);
     }
 
-    fetch('https://farcebook.onrender.com/users', {
+    fetch(`${process.env.REACT_APP_BACKEND_URI}/users`, {
       method: 'POST',
       body: formData,
     })

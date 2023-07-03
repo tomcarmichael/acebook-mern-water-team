@@ -9,7 +9,7 @@ const AddComment = ({ post, onPostAdded }) => {
     event.preventDefault();
 
       if (token) {
-        const response = await fetch(`https://farcebook.onrender.com/posts/${post._id}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/posts/${post._id}`, {
           method: 'PATCH',
           headers: {
             'Authorization': `Bearer ${token}`,
