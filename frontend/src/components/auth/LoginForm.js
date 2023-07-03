@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SignUpForm from '../user/SignUpForm'
 import "./LoginForm.css";
 
-// const backendAPIURI = process.env.BACKEND_API_URI;
+const backendAPIURI = process.env.BACKEND_API_URI;
 
 const LogInForm = ({ navigate }) => {
   const [username, setUsername] = useState("");
@@ -12,7 +12,8 @@ const LogInForm = ({ navigate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch('https://farcebook.onrender.com/tokens', {
+    // let response = await fetch('https://farcebook.onrender.com/tokens', {
+    let response = await fetch(`${backendAPIURI}/tokens`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
